@@ -1,16 +1,3 @@
-"""
-Clean and validate kinesthetic demo data before training.
-
-What it does:
-1. Loads every demo_*.h5 file
-2. Flags/removes episodes with communication glitches (huge single-step jumps)
-3. Flags episodes that are too short (likely accidental/incomplete recordings)
-4. Optionally applies a light median filter to smooth minor read noise
-5. Saves cleaned episodes to a new folder, ready for training
-
-Usage:
-    python3 clean_demos.py
-"""
 
 import h5py
 import numpy as np
@@ -74,8 +61,8 @@ def main():
     files = sorted(glob.glob(f"{RAW_DIR}/*.h5"))
     print(f"Found {len(files)} raw episodes\n")
 
-    # ---- PASS 1: length + glitch checks ----
-    survivors = []  # list of (filename, jp, ts, attrs)
+    
+    survivors = []  
     dropped = 0
 
     for f in files:
@@ -102,7 +89,7 @@ def main():
 
     print(f"\nPass 1 done: {len(survivors)} survived length/glitch checks\n")
 
-    # ---- PASS 2: length outlier check (episode duration far from the pack) ----
+   
     lengths = np.array([len(jp) for _, jp, _, _ in survivors])
     median_len = np.median(lengths)
     mad_len = np.median(np.abs(lengths - median_len)) + 1e-6
@@ -113,7 +100,7 @@ def main():
           name = survivors[i][0]
           print(f"FLAG {name}: length {lengths[i]} is a length outlier (median={median_len:.0f})")
 
-    # ---- PASS 3: shape outlier check (trajectory takes a different path/pattern) ----
+    
     episodes_data = [jp for _, jp, _, _ in survivors]
     shape_outlier_flags, max_devs = detect_shape_outliers(episodes_data, SHAPE_OUTLIER_MAD_MULT)
 
@@ -122,7 +109,7 @@ def main():
         marker = "FLAG" if is_outlier else "    "
         print(f"{marker} {name}: shape deviation = {max_devs[i]:.0f} ticks")
 
-    # ---- FINAL: keep only episodes that passed everything ----
+    
     kept = 0
     for i, (name, jp, ts, attrs) in enumerate(survivors):
         if length_outlier_flags[i] or shape_outlier_flags[i]:

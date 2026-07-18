@@ -1,7 +1,7 @@
 
 # Leno Arm — Learning Pick-and-Place from Human Demonstrations
 
-A 6-DOF Dynamixel AX-12A robotic arm — built using servos and structural
+A 5-DOF Dynamixel AX-12A robotic arm — built using servos and structural
 parts from a [ROBOTIS BIOLOID GP](https://en.robotis.com/model/page.php?co_id=prd_gp)
 humanoid robot kit — that learns to pick and place objects purely from
 human-guided demonstrations. No inverse kinematics, no simulator: just

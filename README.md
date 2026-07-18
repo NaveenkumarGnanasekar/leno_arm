@@ -1,3 +1,4 @@
+
 # Leno Arm — Learning Pick-and-Place from Human Demonstrations
 
 A 6-DOF Dynamixel AX-12A robotic arm — built using servos and structural
@@ -12,11 +13,15 @@ robot learning end-to-end: hardware assembly → kinesthetic data collection
 
 ---
 
-<img src="assets/arm_closeup.jpg" width="800"/>
+
+<img width="1920" height="1080" alt="Pasted image" src="https://github.com/user-attachments/assets/7498f7f2-631b-49b4-93b9-d1993fe838f9" />
 
 *Close-up of the AX-12A gripper and joint stack.*
 
-<img src="assets/arm_on_rail.jpg" width="800"/>
+
+
+
+<img width="4096" height="3072" alt="IMG_20260711_163812457_HDR" src="https://github.com/user-attachments/assets/7a449ad5-16d1-43bf-9b41-6186fb66e95c" />
 
 *Fully assembled arm mounted on the linear rail, in the pick-and-place workspace.*
 
@@ -46,7 +51,9 @@ physically hand-guided through each pick-and-place demonstration, while all
 6 joint positions (5 arm joints + gripper) are logged at 20Hz. A "go home"
 routine returns the arm to a consistent starting pose between every episode.
 
-📹 `data_collection1.mp4` — kinesthetic teaching in action: hand-guiding the
+https://github.com/user-attachments/assets/61afd9ea-0907-4449-8392-dc05966bfc24
+
+ kinesthetic teaching in action: hand-guiding the
 arm through a full pick-and-place demonstration while data is logged live.
 
 ### 2. Data cleaning (`src/clean_demos.py`)
@@ -94,7 +101,11 @@ Exponential smoothing on the continuous arm joint outputs reduces
 frame-to-frame jitter, and hard safety clamps (per-step delta limits + joint
 range limits) prevent any single bad prediction from causing an unsafe motion.
 
-📹 `1.mp4`, `3.mp4` — the trained policy running autonomously on the real arm.
+https://github.com/user-attachments/assets/21d8d66c-97c8-42d4-90f1-701e4e5288a7
+
+https://github.com/user-attachments/assets/e849715d-1681-41de-b2f5-a2f36c3126e1
+
+ the trained policy running autonomously on the real arm.
 
 ---
 
@@ -149,12 +160,8 @@ data quantity/consistency and gripper timing.
 - Shi, Sharma, Zhao, Finn — [Waypoint-Based Imitation Learning for Robotic Manipulation (AWE)](https://arxiv.org/abs/2307.14326)
 - Zhao et al. — [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT/ALOHA)](https://arxiv.org/abs/2304.13705)
 - Chi et al. — [Diffusion Policy](https://arxiv.org/abs/2303.04137)
-- [ROBOTIS BIOLOID GP product page](https://en.robotis.com/model/page.php?co_id=prd_gp)
-- [Dynamixel AX-12A control table documentation](https://emanual.robotis.com/)
-
 ## Acknowledgments
 
-Thanks to **[mentor/professor name here]** for guidance throughout this project,
-and to **[senior/lab-mate name here]** for support during hardware assembly and testing.
+A huge thank you to Sivabalakrishnan R.  Ph.D., for the guidance throughout this project, 
+and to seniors : MADESH KUMAR , ARUNKUMAR M, SABAREESAN K C,Chalus Jude J for all the support along the way.
 
-*(replace with actual names before publishing)*

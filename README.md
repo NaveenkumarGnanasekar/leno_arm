@@ -13,15 +13,12 @@ robot learning end-to-end: hardware assembly → kinesthetic data collection
 
 ---
 
-
-<img width="1920" height="1080" alt="Pasted image" src="https://github.com/user-attachments/assets/7498f7f2-631b-49b4-93b9-d1993fe838f9" />
+<img width="4096" height="3072" alt="IMG_20260711_163812457_HDR" src="https://github.com/user-attachments/assets/7a449ad5-16d1-43bf-9b41-6186fb66e95c" />
 
 *Close-up of the AX-12A gripper and joint stack.*
 
 
-
-
-<img width="4096" height="3072" alt="IMG_20260711_163812457_HDR" src="https://github.com/user-attachments/assets/7a449ad5-16d1-43bf-9b41-6186fb66e95c" />
+<img width="1920" height="1080" alt="Pasted image" src="https://github.com/user-attachments/assets/7498f7f2-631b-49b4-93b9-d1993fe838f9" />
 
 *Fully assembled arm mounted on the linear rail, in the pick-and-place workspace.*
 
